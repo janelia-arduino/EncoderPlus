@@ -7,4 +7,5 @@
 
 Encoder_internal_state_t * EncoderPlus::interruptArgs[];
 
-
+Callback EncoderPlus::positive_callback_ = NULL;
+Callback EncoderPlus::negative_callback_ = NULL;
