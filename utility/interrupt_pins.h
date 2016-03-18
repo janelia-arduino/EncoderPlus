@@ -202,7 +202,7 @@
 #error "Interrupts are unknown for this board, please add to this code"
 #endif
 #if CORE_NUM_INTERRUPT <= 0
-#error "Encoder requires interrupt pins, but this board does not have any :("
+#error "EncoderPlus requires interrupt pins, but this board does not have any :("
 #error "You could try defining ENCODER_DO_NOT_USE_INTERRUPTS as a kludge."
 #endif
 

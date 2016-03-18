@@ -36,14 +36,14 @@
 // It must be defined before Encoder.h is included.
 //#define ENCODER_OPTIMIZE_INTERRUPTS
 
-#include <Encoder.h>
+#include <EncoderPlus.h>
 #include "pins_arduino.h"
 
 // Change these two numbers to the pins connected to your encoder
 // or shift register circuit which emulates a quadrature encoder
 //  case 1: both pins are interrupts
 //  case 2: only first pin used as interrupt
-Encoder myEnc(5, 6);
+EncoderPlus myEnc(5, 6);
 
 // Connect a DC voltmeter to this pin.
 const int outputPin = 12;

@@ -11,7 +11,7 @@
 // your program must call the read() function rapidly, or risk
 // missing changes in position.
 #define ENCODER_DO_NOT_USE_INTERRUPTS
-#include <Encoder.h>
+#include <EncoderPlus.h>
 
 // Beware of Serial.print() speed.  Without interrupts, if you
 // transmit too much data with Serial.print() it can slow your
@@ -23,7 +23,7 @@
 // Change these two numbers to the pins connected to your encoder.
 //   With ENCODER_DO_NOT_USE_INTERRUPTS, no interrupts are ever
 //   used, even if the pin has interrupt capability
-Encoder myEnc(5, 6);
+EncoderPlus myEnc(5, 6);
 //   avoid using pins with LEDs attached
 
 void setup() {

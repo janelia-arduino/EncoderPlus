@@ -26,8 +26,8 @@
  */
 
 
-#ifndef Encoder_h_
-#define Encoder_h_
+#ifndef EncoderPlus_h_
+#define EncoderPlus_h_
 
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "Arduino.h"
@@ -66,10 +66,10 @@ typedef struct {
 	int32_t                position;
 } Encoder_internal_state_t;
 
-class Encoder
+class EncoderPlus
 {
 public:
-	Encoder(uint8_t pin1, uint8_t pin2) {
+	EncoderPlus(uint8_t pin1, uint8_t pin2) {
 		#ifdef INPUT_PULLUP
 		pinMode(pin1, INPUT_PULLUP);
 		pinMode(pin2, INPUT_PULLUP);
@@ -916,28 +916,28 @@ private:
 #if defined(ENCODER_USE_INTERRUPTS) && defined(ENCODER_OPTIMIZE_INTERRUPTS)
 #if defined(__AVR__)
 #if defined(INT0_vect) && CORE_NUM_INTERRUPT > 0
-ISR(INT0_vect) { Encoder::update(Encoder::interruptArgs[SCRAMBLE_INT_ORDER(0)]); }
+ISR(INT0_vect) { EncoderPlus::update(EncoderPlus::interruptArgs[SCRAMBLE_INT_ORDER(0)]); }
 #endif
 #if defined(INT1_vect) && CORE_NUM_INTERRUPT > 1
-ISR(INT1_vect) { Encoder::update(Encoder::interruptArgs[SCRAMBLE_INT_ORDER(1)]); }
+ISR(INT1_vect) { EncoderPlus::update(EncoderPlus::interruptArgs[SCRAMBLE_INT_ORDER(1)]); }
 #endif
 #if defined(INT2_vect) && CORE_NUM_INTERRUPT > 2
-ISR(INT2_vect) { Encoder::update(Encoder::interruptArgs[SCRAMBLE_INT_ORDER(2)]); }
+ISR(INT2_vect) { EncoderPlus::update(EncoderPlus::interruptArgs[SCRAMBLE_INT_ORDER(2)]); }
 #endif
 #if defined(INT3_vect) && CORE_NUM_INTERRUPT > 3
-ISR(INT3_vect) { Encoder::update(Encoder::interruptArgs[SCRAMBLE_INT_ORDER(3)]); }
+ISR(INT3_vect) { EncoderPlus::update(EncoderPlus::interruptArgs[SCRAMBLE_INT_ORDER(3)]); }
 #endif
 #if defined(INT4_vect) && CORE_NUM_INTERRUPT > 4
-ISR(INT4_vect) { Encoder::update(Encoder::interruptArgs[SCRAMBLE_INT_ORDER(4)]); }
+ISR(INT4_vect) { EncoderPlus::update(EncoderPlus::interruptArgs[SCRAMBLE_INT_ORDER(4)]); }
 #endif
 #if defined(INT5_vect) && CORE_NUM_INTERRUPT > 5
-ISR(INT5_vect) { Encoder::update(Encoder::interruptArgs[SCRAMBLE_INT_ORDER(5)]); }
+ISR(INT5_vect) { EncoderPlus::update(EncoderPlus::interruptArgs[SCRAMBLE_INT_ORDER(5)]); }
 #endif
 #if defined(INT6_vect) && CORE_NUM_INTERRUPT > 6
-ISR(INT6_vect) { Encoder::update(Encoder::interruptArgs[SCRAMBLE_INT_ORDER(6)]); }
+ISR(INT6_vect) { EncoderPlus::update(EncoderPlus::interruptArgs[SCRAMBLE_INT_ORDER(6)]); }
 #endif
 #if defined(INT7_vect) && CORE_NUM_INTERRUPT > 7
-ISR(INT7_vect) { Encoder::update(Encoder::interruptArgs[SCRAMBLE_INT_ORDER(7)]); }
+ISR(INT7_vect) { EncoderPlus::update(EncoderPlus::interruptArgs[SCRAMBLE_INT_ORDER(7)]); }
 #endif
 #endif // AVR
 #if defined(attachInterrupt)

@@ -4,19 +4,19 @@
  * This example code is in the public domain.
  */
 
-#include <Encoder.h>
+#include <EncoderPlus.h>
 
 // Change these pin numbers to the pins connected to your encoder.
 //   Best Performance: both pins have interrupt capability
 //   Good Performance: only the first pin has interrupt capability
 //   Low Performance:  neither pin has interrupt capability
-Encoder knobLeft(5, 6);
-Encoder knobRight(7, 8);
+EncoderPlus knobLeft(5, 6);
+EncoderPlus knobRight(7, 8);
 //   avoid using pins with LEDs attached
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("TwoKnobs Encoder Test:");
+  Serial.println("TwoKnobs EncoderPlus Test:");
 }
 
 long positionLeft  = -999;

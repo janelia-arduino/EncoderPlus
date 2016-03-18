@@ -1,6 +1,12 @@
-#Encoder Library#
+#EncoderPlus Library#
 
-Encoder counts pulses from quadrature encoded signals, which are commonly available from rotary knobs, motor or shaft sensors and other position sensors. 
+EncoderPlus counts pulses from quadrature encoded signals, which are
+commonly available from rotary knobs, motor or shaft sensors and other
+position sensors.
+
+It is a slight modification of PJRC's Encoder library that adds
+callbacks to the encoder signal interrupts. This hurts performance,
+but allows conversion of signals into step and direction pulses, etc.
 
 http://www.pjrc.com/teensy/td_libs_Encoder.html
 
