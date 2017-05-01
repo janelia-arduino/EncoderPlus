@@ -4,7 +4,8 @@
  * This example code is in the public domain.
  */
 
-#include <EncoderPlus.h>
+#include "Arduino.h"
+#include "EncoderPlus.h"
 
 // Change these two numbers to the pins connected to your encoder.
 //   Best Performance: both pins have interrupt capability

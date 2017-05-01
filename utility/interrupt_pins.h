@@ -49,11 +49,12 @@
 
 // Arduino Leonardo (untested)
 #elif defined(__AVR_ATmega32U4__) && !defined(CORE_TEENSY)
-  #define CORE_NUM_INTERRUPT	4
+  #define CORE_NUM_INTERRUPT	5
   #define CORE_INT0_PIN		3
   #define CORE_INT1_PIN		2
   #define CORE_INT2_PIN		0
   #define CORE_INT3_PIN		1
+  #define CORE_INT4_PIN		7
 
 // Sanguino (untested)
 #elif defined(__AVR_ATmega644P__) || defined(__AVR_ATmega644__)
@@ -84,7 +85,13 @@
 #elif defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__)
   #define CORE_NUM_INTERRUPT    1
   #define CORE_INT0_PIN		2
-
+  
+//https://github.com/SpenceKonde/ATTinyCore/blob/master/avr/extras/ATtiny_x313.md
+#elif defined(__AVR_ATtinyX313__)
+  #define CORE_NUM_INTERRUPT    2
+  #define CORE_INT0_PIN		4
+  #define CORE_INT1_PIN		5
+  
 // Arduino Due
 #elif defined(__SAM3X8E__) 
   #define CORE_NUM_INTERRUPT	54
@@ -202,7 +209,7 @@
 #error "Interrupts are unknown for this board, please add to this code"
 #endif
 #if CORE_NUM_INTERRUPT <= 0
-#error "EncoderPlus requires interrupt pins, but this board does not have any :("
+#error "Encoder requires interrupt pins, but this board does not have any :("
 #error "You could try defining ENCODER_DO_NOT_USE_INTERRUPTS as a kludge."
 #endif
 
